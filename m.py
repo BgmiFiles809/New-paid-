@@ -11,6 +11,8 @@ from telebot.types import ReplyKeyboardMarkup, KeyboardButton, InputFile
 from datetime import datetime, timedelta
 import pytz
 import requests
+from keep_alive import keep_alive
+keep_alive()
 
 # Initialize logging for better monitoring
 logging.basicConfig(filename='bot_actions.log', level=logging.INFO, 
