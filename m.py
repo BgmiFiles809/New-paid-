@@ -17,7 +17,7 @@ logging.basicConfig(filename='bot_actions.log', level=logging.INFO,
                     format='%(asctime)s - %(message)s')
 
 # Initialize the bot with the token from environment variables
-TOKEN = os.getenv('7180358484:AAEErQhLIg22mTzlAivNsqf9RXT500gPLl0')
+TOKEN = "8051776188:AAEfH7tgGO5cM1v_jiY4jdWwgdJHtOGBavY"
 if not TOKEN:
     raise ValueError("Please set your bot token in the environment variables!")
 
@@ -142,7 +142,7 @@ def send_welcome(message):
         "🔹 Want to *stop* all ongoing actions? Just type:\n"
         "stop all\n\n"
         "🔐 *Important:* Only authorized users can use this bot in private chat. 😎\n\n"
-        "🤖 _This bot was made by Ibr._"
+        "🤖 _This bot was made by @Vip_Ddos_07._"
     )
     bot.reply_to(message, welcome_text, parse_mode='Markdown', reply_markup=markup)
 
@@ -347,7 +347,7 @@ def handle_message(message):
     
     # Skip authorization check if the user is in the AUTHORIZED_USERS list
     if chat_type == 'private' and user_id not in AUTHORIZED_USERS and not is_authorized(user_id):
-        bot.reply_to(message, '⛔ *You are not authorized to use this bot.* Please send /auth to request access. 🤔\n\n_This bot was made by Ibr._', parse_mode='Markdown')
+        bot.reply_to(message, '⛔ *You are not authorized to use this bot.* Please send /auth to request access. 🤔\n\n_This bot was made by @Vip_Ddos_07._', parse_mode='Markdown')
         return
 
     text = message.text.strip().lower()
@@ -371,10 +371,10 @@ def handle_message(message):
             
             # Validate IP and Port
             if not is_valid_ip(ip):
-                bot.reply_to(message, "❌ *Invalid IP address!* Please provide a valid IP.\n\n_This bot was made by Ibr._", parse_mode='Markdown')
+                bot.reply_to(message, "❌ *Invalid IP address!* Please provide a valid IP.\n\n_This bot was made by @Vip_Ddos_07._", parse_mode='Markdown')
                 return
             if not is_valid_port(port):
-                bot.reply_to(message, "❌ *Invalid Port!* Port must be between 1 and 65535.\n\n_This bot was made by Ibr._", parse_mode='Markdown')
+                bot.reply_to(message, "❌ *Invalid Port!* Port must be between 1 and 65535.\n\n_This bot was made by @Vip_Ddos_07._", parse_mode='Markdown')
                 return
 
             # Respond to user
@@ -384,11 +384,11 @@ def handle_message(message):
                 f"🔌 *Port:* `{port}`\n"
                 f"⏳ *Duration:* `{duration} seconds`\n\n"
                 "Hang tight, action is being processed... ⚙️\n\n"
-                "_This bot was made by Ibr._"
+                "_This bot was made by @Vip_Ddos_07._"
             ), parse_mode='Markdown')
             run_action(user_id, message, ip, port, duration)
         else:
-            bot.reply_to(message, "⚠️ *Oops!* Please provide the IP and port in the correct format: `<ip> <port>`.\n\n_This bot was made by Ibr._", parse_mode='Markdown')
+            bot.reply_to(message, "⚠️ *Oops!* Please provide the IP and port in the correct format: `<ip> <port>`.\n\n_This bot was made by @Vip_Ddos_07._", parse_mode='Markdown')
 
     elif user_mode == 'manual':
         # Manual mode logic
@@ -398,13 +398,13 @@ def handle_message(message):
 
             # Validate IP, Port, and Duration
             if not is_valid_ip(ip):
-                bot.reply_to(message, "❌ *Invalid IP address!* Please provide a valid IP.\n\n_This bot was made by Ibr._", parse_mode='Markdown')
+                bot.reply_to(message, "❌ *Invalid IP address!* Please provide a valid IP.\n\n_This bot was made by @Vip_Ddos_07._", parse_mode='Markdown')
                 return
             if not is_valid_port(port):
-                bot.reply_to(message, "❌ *Invalid Port!* Port must be between 1 and 65535.\n\n_This bot was made by Ibr._", parse_mode='Markdown')
+                bot.reply_to(message, "❌ *Invalid Port!* Port must be between 1 and 65535.\n\n_This bot was made by @Vip_Ddos_07._", parse_mode='Markdown')
                 return
             if not is_valid_duration(duration):
-                bot.reply_to(message, "❌ *Invalid Duration!* The duration must be between 1 and 600 seconds.\n\n_This bot was made by Ibr._", parse_mode='Markdown')
+                bot.reply_to(message, "❌ *Invalid Duration!* The duration must be between 1 and 600 seconds.\n\n_This bot was made by @Vip_Ddos_07._", parse_mode='Markdown')
                 return
 
             bot.reply_to(message, (
@@ -413,7 +413,7 @@ def handle_message(message):
                 f"🔌 *Port:* `{port}`\n"
                 f"⏳ *Duration:* `{duration} seconds`\n\n"
                 "Hang tight, action is being processed... ⚙️\n\n"
-                "_This bot was made by Ibr._"
+                "_This bot was made by @Vip_Ddos_07._"
             ), parse_mode='Markdown')
             run_action(user_id, message, ip, port, duration)
         else:
@@ -421,7 +421,7 @@ def handle_message(message):
                 "⚠️ *Oops!* The format looks incorrect. Let's try again:\n"
                 "`<ip> <port> <duration>`\n\n"
                 "For example, type `192.168.1.100 8080 60` to run an action for 60 seconds.\n\n"
-                "_This bot was made by Ibr._"
+                "_This bot was made by @Vip_Ddos_07._"
             ), parse_mode='Markdown')
 
 # Function to dynamically show stop action button for each user
@@ -511,7 +511,7 @@ def check_process_status(message, process, ip, port, duration):
         f"🔌 *Port:* `{port}`\n"
         f"⏱ *Duration:* `{duration} seconds`\n\n"
         "💡 *Need more help?* Just send me another request, I'm here to assist! 🤗\n\n"
-        "_This bot was made by Ibr._"
+        "_This bot was made by @Vip_Ddos_07._"
     ), parse_mode='Markdown', reply_markup=markup)
 
 def stop_all_actions(message):
